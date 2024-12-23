@@ -1,7 +1,4 @@
-<h1 align="center">Generate Data Script</h1>
-<br>
-
-## Description
+# Generate Data Script
 
 This script is designed to generate large amounts of test data for **regression testing** in various formats, including **text**, **JSON**, and **CSV**. The user can specify the format, size, number of records, and more, while the script supports **multi-threading** for efficient file generation.
 
@@ -21,150 +18,62 @@ This script is designed to generate large amounts of test data for **regression 
 
 - **Python 3.x**
 - Install the required `faker` library:
+  
   ```bash
   pip install faker
-Command-Line Arguments
+
+## Command-Line Arguments
+
 You can configure the script by passing the following command-line arguments:
 
---output-dir (optional): Path to the output directory where the generated files will be stored. Default is ./test_data.
+- `--output-dir` (optional):  
+  Path to the output directory where the generated files will be stored. Default is `./test_data`.
 
-Example:
+  **Example:**
+  ```bash
+  --output-dir ./generated_data
 
-bash
-Copy code
---output-dir ./generated_data
---num-files (required): The number of files to generate. Default is 100.
+- `--num-files` (required):
+  The number of files to generate. Default is 100.
 
-Example:
+  **Example:**
+  ```bash
+  --num-files 200
 
-bash
-Copy code
---num-files 200
---file-format (required): The format of the files to generate. Choose from:
+- `--file-format` (required):
+  The format of the files to generate. Choose from:
+  - **text:** Plain text files with random alphanumeric data.
+  - **json:** JSON files with random structured profiles.
+  - **csv:** CSV files with tabular data.
+  
+  **Example:**
+  ```bash
+  --file-format json
 
-text: Plain text files with random alphanumeric data.
-json: JSON files with random structured profiles.
-csv: CSV files with tabular data.
-Example:
+- `--file-size-mb` (optional):  
+  The size of each text file in MB (only applicable for text format). The default is **1 MB**.
 
-bash
-Copy code
---file-format json
---file-size-mb (optional): The size of each text file in MB (only applicable for text format). Default is 1 MB.
+  **Example:**
+  ```bash
+  --file-size-mb 50
 
-Example:
+- `--num-records` (optional):  
+  The number of records per file for JSON or CSV formats. The default is **100**.
+  
+  **Example:**
+  ```bash
+  --num-records 500
 
-bash
-Copy code
---file-size-mb 50
---num-records (optional): The number of records per file for json or csv formats. Default is 100.
+- `--num-threads` (optional):  
+  The number of threads to use for concurrent generation. The default is **5**.
+   
+  **Example:**
+  ```bash
+  --num-threads 10
 
-Example:
+## Usage
 
-bash
-Copy code
---num-records 500
---num-threads (optional): The number of threads to use for concurrent generation. Default is 5.
-
-Example:
-
-bash
-Copy code
---num-threads 10
-Usage
 To run the script, execute the following command:
 
-bash
-Copy code
+```bash
 python enhanced_data_generator.py --output-dir <path_to_output_directory> --num-files <number_of_files> --file-format <file_format> --file-size-mb <file_size_in_MB> --num-records <number_of_records> --num-threads <number_of_threads>
-Example Commands
-Generate 100 JSON files, each containing 500 records:
-
-bash
-Copy code
-python enhanced_data_generator.py --file-format json --num-files 100 --num-records 500
-Generate 50 CSV files and store them in a custom directory:
-
-bash
-Copy code
-python enhanced_data_generator.py --file-format csv --num-files 50 --output-dir ./custom_dir
-Generate 10 text files, each 50 MB in size:
-
-bash
-Copy code
-python enhanced_data_generator.py --file-format text --num-files 10 --file-size-mb 50
-Generate 200 text files, each 1 MB in size, using 10 threads:
-
-bash
-Copy code
-python enhanced_data_generator.py --file-format text --num-files 200 --file-size-mb 1 --num-threads 10
-File Format Details
-Text Format
-File Contents: The text format generates random alphanumeric text data. The size of each file is controlled by the --file-size-mb argument.
-
-Example:
-
-python
-Copy code
-5h9W6aB0D5
-T7wG1X8K9z
-eL1vF6M3uP
-...
-JSON Format
-File Contents: The json format generates random structured data in the form of fake user profiles. The number of records is controlled by the --num-records argument.
-
-Example JSON data:
-
-json
-Copy code
-[
-  {
-    "name": "John Doe",
-    "address": "123 Fake St, Faketown, FT 12345",
-    "email": "johndoe@example.com",
-    "phone_number": "+1234567890",
-    "job": "Software Developer"
-  },
-  ...
-]
-CSV Format
-File Contents: The csv format generates rows of tabular data with columns like name, address, email, phone_number, and job. The number of records is controlled by the --num-records argument.
-
-Example CSV data:
-
-csv
-Copy code
-name,address,email,phone_number,job
-John Doe,123 Fake St, johndoe@example.com,+1234567890,Software Developer
-Jane Smith,456 Real Ave,jane.smith@example.com,+1234567891,Data Analyst
-...
-Logging
-The script provides detailed logging to help track the file generation process and troubleshoot any issues.
-
-Log Levels
-INFO: Displays progress information such as the creation of files and the number of records.
-
-Example:
-
-arduino
-Copy code
-INFO - Writing data to ./test_data/test_file_0.txt in text format.
-INFO - File ./test_data/test_file_0.txt created.
-DEBUG: Provides more detailed information about the data generation process, including the random data being generated.
-
-Example:
-
-arduino
-Copy code
-DEBUG - Generating random text data for test_file_0.txt
-DEBUG - Writing text data to ./test_data/test_file_0.txt
-ERROR: Logs any errors that occur during execution, such as file write failures or unsupported format issues.
-
-Log Output
-Logs are printed to the console by default, and you can redirect them to a log file if needed.
-
-Performance Considerations
-Multi-Threading: Use the --num-threads option to enable multi-threaded file generation, which speeds up the process when generating large datasets.
-File Size: Adjust the --file-size-mb and --num-records options to meet your testing needs. Keep in mind that generating large files requires sufficient disk space.
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
