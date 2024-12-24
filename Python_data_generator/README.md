@@ -1,4 +1,7 @@
-# Generate Data Script
+<h1 align="center">Data Generation Script</h1>
+<a target="_blank">
+  <img align="right" height="350" width="450" src="https://github.com/dhruvgarg31/malicious_scripts/blob/master/Python_data_generator/flowchart%20Diagram.webp">
+</a>
 
 This script is designed to generate large amounts of test data for **regression testing** in various formats, including **text**, **JSON**, and **CSV**. The user can specify the format, size, number of records, and more, while the script supports **multi-threading** for efficient file generation.
 
