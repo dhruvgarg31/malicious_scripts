@@ -1,0 +1,29 @@
+{
+    "cassandra": [
+        {
+            "ip": "127.0.0.1",
+            "port": 9042,
+            "username": "cassandra",
+            "password": "cassandra",
+            "keyspace": "your_keyspace"
+        }
+    ],
+    "number_of_entries": 10,
+    "tables": [
+        {
+            "name": "event",
+            "columns": {
+                "event_name": {"type": "string"},
+                "event_id": {"type": "int", "min": 1, "max": 1000},
+                "event_type": {"type": "string"},
+                "event_date": {"type": "timestamp"},
+                "location": {"type": "string"},
+                "organizer": {"type": "string"},
+                "duration": {"type": "int", "min": 30, "max": 300},
+                "attendees": {"type": "int", "min": 10, "max": 1000},
+                "event_description": {"type": "string"},
+                "ticket_price": {"type": "float", "min": 10, "max": 500}
+            }
+        }
+    ]
+}
