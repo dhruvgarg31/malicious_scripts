@@ -1,4 +1,7 @@
 # Cassandra Data Generation Script
+<a target="_blank">
+  <img align="right" height="350" width="450" src="https://github.com/dhruvgarg31/malicious_scripts/blob/master/Cassandra_script/flow%20diagram.webp">
+</a>
 
 This Python script is designed to generate fake data and insert it into a Cassandra database. It takes a configuration file `(config.json)` that specifies the number of entries, table details, column names, and data types, and then generates random data based on the provided schema. The script also supports batch insertion, logging, export to CSV or JSON, and error handling with retries.
 
