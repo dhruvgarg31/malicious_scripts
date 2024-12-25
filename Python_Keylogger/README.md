@@ -4,35 +4,35 @@
 This Python script is a multifunctional tool that captures keystrokes, takes periodic screenshots, and securely stores data. It also includes stealth mode for running invisibly, automatic error recovery, and email notifications for sending collected data. After sending the email, the stored data is deleted to manage storage efficiently.
 
 ## Diagram
-
-Keylogger and Screenshot Capturing Script
-├── Start
-│   └── User starts the script (cross-platform: Windows/Linux)
-├── Keylogging
-│   ├── Captures full words typed by the user
-│   └── Logs timestamps for each word
-├── Screenshot Capturing
-│   └── Takes screenshots every 10 seconds
-├── Data Storage
-│   ├── Stores keystrokes and screenshots
-│   ├── Windows: C:\keystroke_data
-│   └── Linux: /home/{user}/keystroke_data
-├── Stealth Mode
-│   ├── Windows: Uses `pythonw.exe` and `.vbs` script
-│   └── Linux: Runs with `nohup` or as a systemd service
-├── Data Encryption
-│   └── Encrypts stored data for security
-├── Email Notification
-│   ├── Sends encrypted data via email every 30 minutes
-│   └── Attaches a zipped folder with keystrokes and screenshots
-├── Data Deletion
-│   └── Deletes the folder after email is sent
-├── Error Handling
-│   ├── Logs errors to a file
-│   └── Automatically restarts the script on failure
-└── Loop
-    ├── Continuously captures and processes data
-    └── Stops only when the script is manually terminated
+    ```text
+    Keylogger and Screenshot Capturing Script
+    ├── Start
+    │   └── User starts the script (cross-platform: Windows/Linux)
+    ├── Keylogging
+    │   ├── Captures full words typed by the user
+    │   └── Logs timestamps for each word
+    ├── Screenshot Capturing
+    │   └── Takes screenshots every 10 seconds
+    ├── Data Storage
+    │   ├── Stores keystrokes and screenshots
+    │   ├── Windows: C:\keystroke_data
+    │   └── Linux: /home/{user}/keystroke_data
+    ├── Stealth Mode
+    │   ├── Windows: Uses `pythonw.exe` and `.vbs` script
+    │   └── Linux: Runs with `nohup` or as a systemd service
+    ├── Data Encryption
+    │   └── Encrypts stored data for security
+    ├── Email Notification
+    │   ├── Sends encrypted data via email every 30 minutes
+    │   └── Attaches a zipped folder with keystrokes and screenshots
+    ├── Data Deletion
+    │   └── Deletes the folder after email is sent
+    ├── Error Handling
+    │   ├── Logs errors to a file
+    │   └── Automatically restarts the script on failure
+    └── Loop
+        ├── Continuously captures and processes data
+        └── Stops only when the script is manually terminated
 
 
 ## Features
