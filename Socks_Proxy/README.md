@@ -1,4 +1,7 @@
 # Squid Proxy Server Management Script
+<a target="_blank">
+  <img align="right" height="400" width="450" src="https://github.com/dhruvgarg31/malicious_scripts/blob/master/Socks_Proxy/flow%20diagram.webp">
+</a>
 
 This Bash script simplifies the management of a Squid proxy server by providing commands to install, configure, and manage the service. It also supports user authentication and logging.
 
@@ -20,9 +23,10 @@ This Bash script simplifies the management of a Squid proxy server by providing 
 Clone this repository or copy the script file onto your server.
 
 ### 2. Make the Script Executable
-.
+- Use the below command
+  
     ```bash
-    chmod +x squid_proxy_manager.sh
+    chmod +x server.sh
 
 ### 3. Run the Script
 The script supports the following commands:
@@ -37,34 +41,34 @@ The script supports the following commands:
 | `configure-logging`              | Enables and configures Squid logging.                 |
 
 ### 4. Examples
-**Install Squid Proxy**
+- **Install Squid Proxy**
     ```bash
-    ./squid_proxy_manager.sh install
+    ./server.sh install
 
-### Start Squid Proxy
--
+- **Start Squid Proxy**
+
     ```bash
-    ./squid_proxy_manager.sh start
+    ./server.sh start
 
 - **Stop Squid Proxy**
 
     ```bash
-    ./squid_proxy_manager.sh stop
+    ./server.sh stop
 
 - **Check Squid Proxy Status**
 
     ```bash
-    ./squid_proxy_manager.sh status
+    ./server.sh status
 
 - **Create a User for Authentication**
 
     ```bash
-    ./squid_proxy_manager.sh create-user myuser mypassword
+    ./server.sh create-user myuser mypassword
 
 - **Enable Logging**
 
     ```bash
-    ./squid_proxy_manager.sh configure-logging
+    ./server.sh configure-logging
 
 ## Configuration
 - The script assumes Squid's default port is `3128`. If needed, you can modify this port in the script by changing the value of the `SQUID_PORT` variable:
@@ -85,6 +89,7 @@ The script supports the following commands:
 
 ## Troubleshooting
 - **Firewall Issues:** Ensure `firewalld` is installed and running. The script manages the firewall rules automatically.
+
     ```bash
     sudo systemctl status firewalld
 
